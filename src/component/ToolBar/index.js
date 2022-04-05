@@ -13,7 +13,10 @@ export default function ToolBar() {
             iconProps:{iconName:"Add"},
             onClick:()=>{nav("/book/create")}
         }]}
+        style={{paddingTop:50}}
     />
+    <hr style={{border:"1px solid", margin:0}}/>
+    
     </div>
   )
 }

@@ -2,11 +2,13 @@ import axios from 'axios'
 import React,{useEffect,useState} from 'react'
 import {DetailsList,SelectionMode,Stack,PrimaryButton} from "@fluentui/react"
 import ToolBar from '../component/ToolBar'
+import { useNavigate } from 'react-router-dom'
 const columnProps={
   tokens:{childrenGap:20},
   styles:{root:{width:100}},
 }
 export default function Books() {
+  const nav = useNavigate();
   const columns = 
   [
     {
@@ -57,7 +59,11 @@ export default function Books() {
       onRender:(item)=>(
         <Stack horizontal {...columnProps}>
           <PrimaryButton text='Add +' onClick={()=>{addToCart(item)}}/>
-          <PrimaryButton text='Edit' onClick={()=>{alert("Düzenlendi")}}/>
+          <PrimaryButton text='Edit' onClick={
+            ()=>{
+             nav(`/book/edit/${item.id}`,{state:{id:item.id}}) 
+            }
+            }/>
           <PrimaryButton text='Delete' onClick={async ()=> await deleteBook(item.id)}/>
         </Stack>
       )
@@ -82,11 +88,13 @@ function getBook()
   useEffect(()=>{
  getBook();
   });
+
   return (
     <div>
+
     <ToolBar/>
 <div className='content'>
-  <div className='content-header'>Books</div>
+  <div className='content-header' style={{paddingTop:0}}>Books</div>
   <DetailsList items={books} columns={columns} selectionMode={SelectionMode.none}/>
 </div>
  </div>

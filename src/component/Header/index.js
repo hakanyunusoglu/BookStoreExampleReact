@@ -3,6 +3,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import {Layer,getTheme,FontIcon} from '@fluentui/react'
 import "./header.css"
+import { findByLabelText } from '@testing-library/react'
 
 export default function Header() {
   const theme = getTheme();
