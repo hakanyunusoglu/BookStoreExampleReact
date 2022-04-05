@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React,{useEffect,useState} from 'react'
 import {DetailsList,SelectionMode,Stack,PrimaryButton} from "@fluentui/react"
+import ToolBar from '../component/ToolBar'
 const columnProps={
   tokens:{childrenGap:20},
   styles:{root:{width:100}},
@@ -83,6 +84,7 @@ function getBook()
   });
   return (
     <div>
+    <ToolBar/>
 <div className='content'>
   <div className='content-header'>Books</div>
   <DetailsList items={books} columns={columns} selectionMode={SelectionMode.none}/>

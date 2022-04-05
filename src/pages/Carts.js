@@ -43,7 +43,7 @@ export default function Carts() {
       name:"NAME",
       fieldName:"name",
       minWidth: 100,
-      maxWidth: 150,
+      maxWidth: 250,
       isRowHeader: true
     },
     {
@@ -51,7 +51,7 @@ export default function Carts() {
       name:"ABOUT",
       fieldName:"about",
       minWidth: 300,
-      maxWidth: 500,
+      maxWidth: 900,
       isRowHeader: true
     },
     {
