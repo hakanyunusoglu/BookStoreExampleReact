@@ -86,8 +86,8 @@ export default function Carts() {
   return (
 <div>
   <div className='content'>
-    <div className='content-header'>{carts.length>0 ? "Carts" : "Cart is empty"}Carts</div>
-    <DetailsList items={carts} columns={columns} selectionMode = {SelectionMode.none}/>
+    <div className='content-header'>{carts.length>0 ? "Carts" : "Cart is empty"}</div>
+    {carts.length>0 && <DetailsList items={carts} columns={columns} selectionMode = {SelectionMode.none}/>}
   </div>
 </div>
   )
