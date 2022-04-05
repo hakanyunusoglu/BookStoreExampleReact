@@ -70,7 +70,7 @@ export default function Carts() {
   ]
   async function deleteCart(cartID){
   const response = await axios.delete(`https://api-bookseller.herokuapp.com/carts/${cartID}`);
-  if(response.status == 200){
+  if(response.status === 200){
     alert("Kart silindi");
   }
     getCart();
